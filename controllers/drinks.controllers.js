@@ -34,6 +34,7 @@ exports.new_drinks = async (req, res) => {
     });
 
     return res.status(201).json({
+      status: "Success",
       message: "Drink saved successfully 😎",
       new_drink,
     });
@@ -51,6 +52,7 @@ exports.drinks_available = async (req, res) => {
     const all_drinks = await Drink.find();
     const drinks_count = await Drink.estimatedDocumentCount();
     return res.status(200).json({
+      status: "Success",
       message: "These are all the drinks available:",
       drinks_count,
       all_drinks,
@@ -81,6 +83,7 @@ exports.update_drinks = async (req, res) => {
       { new: true }
     );
     return res.status(200).json({
+      status: "Success",
       message: "Drink updated successfully",
       drink: edit_drinks,
     });
@@ -107,6 +110,7 @@ exports.delete_drinks = async (req, res) => {
     // delete by id
     await Drink.findByIdAndDelete(id);
     return res.status(200).json({
+      status: "Success",
       message: "Drink deleted successfully",
     });
   } catch (error) {
