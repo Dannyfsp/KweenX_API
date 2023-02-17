@@ -40,7 +40,8 @@ exports.new_drinks = async (req, res) => {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "Something went wrong 😢",
+      status: "Failed",
+      message: error.message,
     });
   }
 };
@@ -59,7 +60,8 @@ exports.drinks_available = async (req, res) => {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "Something went wrong 😢",
+      status: "Failed",
+      message: error.message,
     });
   }
 };
@@ -90,7 +92,8 @@ exports.update_drinks = async (req, res) => {
   } catch (error) {
     console.log(error);
     return res.status(500).json({
-      message: "Something went wrong 😢",
+      status: "Failed",
+      message: error.message,
     });
   }
 };
@@ -115,7 +118,8 @@ exports.delete_drinks = async (req, res) => {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "Something went wrong 😢",
+      status: "Failed",
+      message: error.message,
     });
   }
 };
@@ -138,7 +142,8 @@ exports.single_drink = async (req, res) => {
     });
   } catch (error) {
     return res.status(500).json({
-      message: "Something went wrong 😢",
+      status: "Failed",
+      message: error.message,
     });
   }
 };
