@@ -15,8 +15,8 @@ touch .env
 ```
 - Thirdly inside your .env file create your port and set it to whatever port number you want to use and set your mongodb url:
 ```
-PORT=1001
-MONGO_URI=mongodb_url here
+PORT=****
+MONGO_URI=*************
 ```
 - Lastly in your terminal run the start or dev script
 ```

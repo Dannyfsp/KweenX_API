@@ -1,5 +1,4 @@
 // import drink model
-const { estimatedDocumentCount } = require("../models/drinks.models");
 const Drink = require("../models/drinks.models");
 
 // function to save new drinks to database
@@ -51,7 +50,7 @@ exports.drinks_available = async (req, res) => {
   try {
     // get all drinks available
     const all_drinks = await Drink.find();
-    const drinks_count = await Drink.estimatedDocumentCount();
+    const drinks_count = await Drink.countDocuments();
     return res.status(200).json({
       status: "Success",
       message: "These are all the drinks available:",
@@ -90,7 +89,6 @@ exports.update_drinks = async (req, res) => {
       drink: edit_drinks,
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).json({
       status: "Failed",
       message: error.message,
